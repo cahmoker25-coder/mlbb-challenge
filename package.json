@@ -1,0 +1,7 @@
+{
+  "name": "mlbb-challenge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MLBB Random Challenge + Form Viewer + Sociabuzz",
+  "engines": { "node": ">=18" }
+}
