@@ -103,8 +103,8 @@ function showResult(j){
  const f=document.getElementById('challengeForm');f.style.display='none';
  const box=document.getElementById('resultBox');box.innerHTML='';
  const mk=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
- box.appendChild(mk('h2','res-h','LANGKAH TERAKHIR: DONASI'));
- box.appendChild(mk('p','res-p','Challenge kamu sudah tersimpan, tapi BELUM masuk antrean. Donasi dulu dan tulis kode ini di PESAN donasi:'));
+ box.appendChild(mk('h2','res-h','LANGKAH TERAKHIR: DONATE'));
+ box.appendChild(mk('p','res-p','Challenge kamu sudah tersimpan, tapi BELUM masuk antrean. Donate dulu dan tulis kode ini di PESAN donate:'));
  box.appendChild(mk('div','res-code',j.code));
  const cp=mk('button','res-btn alt','SALIN KODE');cp.type='button';
  cp.onclick=()=>{const done=()=>{cp.textContent='TERSALIN ✔'};if(navigator.clipboard)navigator.clipboard.writeText(j.code).then(done,done);else done()};box.appendChild(cp);
