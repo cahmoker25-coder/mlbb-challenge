@@ -23,12 +23,6 @@ module.exports = async (req, res) => {
       ch.result = b.result === 'win' ? 'win' : 'loss';
       ch.doneAt = Date.now();
       await L.redis(['LREM', 'queue', '0', code]);
-    } else if (action === 'manual_pay') {
-      if (ch.status !== 'pending') return res.status(409).json({ ok: false, error: 'Status bukan menunggu bayar' });
-      ch.status = 'paid';
-      ch.paidAt = Date.now();
-      ch.donor = { name: '(dilunasi manual)', amount: null, message: '' };
-      await L.redis(['LPUSH', 'queue', code]);
     } else if (action === 'reject') {
       ch.status = 'rejected';
       await L.redis(['LREM', 'queue', '0', code]);
