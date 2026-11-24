@@ -103,13 +103,13 @@ function showResult(j){
  const f=document.getElementById('challengeForm');f.style.display='none';
  const box=document.getElementById('resultBox');box.innerHTML='';
  const mk=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
- box.appendChild(mk('h2','res-h','LANGKAH TERAKHIR: TRAKTIR KOPI'));
- box.appendChild(mk('p','res-p','Challenge kamu sudah tersimpan, tapi BELUM masuk antrean. Traktir dulu dulu dan tulis kode ini di PESAN donate:'));
+ box.appendChild(mk('h2','res-h','LANGKAH TERAKHIR: TRAKTIR KOPI😁'));
+ box.appendChild(mk('p','res-p','Challenge kamu sudah tersimpan, tapi BELUM masuk ke antrean. Traktir kopi dulu dan paste kode di bawah di PESAN donate:'));
  box.appendChild(mk('div','res-code',j.code));
  const cp=mk('button','res-btn alt','SALIN KODE');cp.type='button';
  cp.onclick=()=>{const done=()=>{cp.textContent='TERSALIN ✔'};if(navigator.clipboard)navigator.clipboard.writeText(j.code).then(done,done);else done()};box.appendChild(cp);
- box.appendChild(mk('p','res-p','Donate minimal Sociabuzz Rp'+Number(j.min||0).toLocaleString('id-ID')+'. Kode berlaku 48 jam. Tanpa kode di pesan donate, challenge tidak akan masuk.'));
- if(j.donasiUrl){const a=mk('a','res-btn','BUKA HALAMAN DONASI');a.href=j.donasiUrl;a.target='_blank';a.rel='noopener';box.appendChild(a)}
+ box.appendChild(mk('p','res-p','Donate minimal Sociabuzz : Rp'+Number(j.min||0).toLocaleString('id-ID')+'. Kode berlaku 48 jam. Tanpa kode di pesan donate, challenge tidak akan masuk.'));
+ if(j.donasiUrl){const a=mk('a','res-btn','BUKA SOCIABUZZ');a.href=j.donasiUrl;a.target='_blank';a.rel='noopener';box.appendChild(a)}
  box.style.display='block';window.scrollTo(0,0);
 }
 renderHeroes('');
